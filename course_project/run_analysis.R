@@ -73,7 +73,6 @@ rm(list=setdiff(ls(), "all.data"))
 # Separate the measure column in to prefix, statistic, and axis
 # Separate the prefix column into a time/frequency columna and mesurement type
 # Convert the appropriate variables to factors
-# Write the result to a tidy csv file
 
 tidy.data <- 
 all.data %>%
@@ -85,6 +84,7 @@ all.data %>%
   separate(prefix, c("timefreq","measurement"),sep=1) %>%
   mutate_at("-average", as.factor)
 
+# Write the result to a tidy text file and check the structure
+
 write.table(tidy.data,"tidy.txt",append = FALSE, row.names = FALSE)
-  
 str(data.frame(tidy.data))

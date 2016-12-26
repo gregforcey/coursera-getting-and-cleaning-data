@@ -10,6 +10,8 @@ CodeBook.md | A codebook explaining the meaning of each variable in the tidy dat
 tidy.txt | The tidy dataset itself provided as a txt file exported using `write.table`. The tidy data can be read back into R using the command below.
 
 ```{r}
-tidy_data <- read.table("https://github.com/gregforcey/getting_and_cleaning_data/course_project/tidy.txt", header=TRUE)
+url <- "https://raw.githubusercontent.com/gregforcey/getting_and_cleaning_data/master/course_project/tidy.txt"
+
+tidy_data <- read.table(url, sep=c("","\"\""), na.strings="", header=TRUE)
 ```
 Be sure to change the path of the working directory in the run_analysis file if you are trying to run the script locally. 

@@ -148,11 +148,14 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>tidy.txt</td>
-<td>The tidy dataset itself provided as a csv file. Use the following command to read the tidy data into R for review:</td>
+<td>The tidy dataset itself provided as a txt file exported using <code>write.table</code>. The tidy data can be read back into R using the command below.</td>
 </tr>
 </tbody>
 </table>
-<pre class="{r}"><code>tidy_data &lt;- read.table(&quot;https://github.com/gregforcey/getting_and_cleaning_data/course_project/tidy.txt&quot;, header=TRUE)</code></pre>
+<pre class="{r}"><code>url &lt;- &quot;https://raw.githubusercontent.com/gregforcey/getting_and_cleaning_data/master/course_project/tidy.txt&quot;
+
+tidy_data &lt;- read.table(url, sep=c(&quot;&quot;,&quot;\&quot;\&quot;&quot;), na.strings=&quot;&quot;, header=TRUE)</code></pre>
+<p>Be sure to change the path of the working directory in the run_analysis file if you are trying to run the script locally.</p>
 </div>
 
 
